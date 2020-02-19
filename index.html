@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="indexCSS.css" media="screen"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Quem ganha?</title>
+  </head>
+  <body>
+
+
+<div class="container">
+        <div class="row">
+          <div class="col">
+            <div class = "tit">
+                    <h3>Quem ganha?</h3>
+            </div>
+            <div>
+                <p class="text-primary">O = Ouro, P = Paus, C = Copas, E = Espadas </p>
+                <p class="text-primary"> K = Rei, Q = Dama, J = Valete, A = Ás </p>
+              <br><br><br> 
+              <p class="text-danger">
+                    Utilize a sequencia de "número" e "carta", por exemplo, KO = Reis de Ouro, 7P = 7 de Paus, com o total de 5 cartas!
+              </p> 
+            </div>
+          </div>
+          <div class="col">
+                <div class = "divmeio">
+                        <form>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Cartas do primeiro jogador</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="2P,4E,5E,2O,KC">
+                              </div>
+                              <div class="form-group">
+                                <label for="formGroupExampleInput2">Cartas do segundo jogador</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="2P,4E,5E,2O,KC">
+                              </div>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#quemganha">
+                                    Quem ganha?
+                                  </button>
+                              
+                          </form>
+                    </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="quemganha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary">Salvar mudanças</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+        
