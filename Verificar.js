@@ -17,17 +17,18 @@ function melhorMao(){
        jogador[i] =  verifica(Carta[i]);
     }
     
-    if(jogador[0][0] <= jogador[1][0]){
-       // console.log("jogador 1 ganhou! /1");
+    if(jogador[0][0] < jogador[1][0]){ //Comparando se a mão do jogador é maior ou menor
+       
         vencedor = 'Jogador 1 venceu!';
     }
-    else if(jogador[0] == jogador[1]){
+    else if(jogador[0][0] == jogador[1][0]){
        
         if(jogador[0][1] > jogador[1][1]){    
             vencedor = 'Jogador 1 venceu!';
         }
         else if(jogador[0][1] == jogador[1][1]){
-            if(jogador[0][2] > jogador[1][2]){          
+            if(jogador[0][2] > jogador[1][2]){   
+                  
                 vencedor = 'Jogador 1 venceu!';
             }
             else{
@@ -42,7 +43,7 @@ function melhorMao(){
     }
     else {
       
-        vencedor = '2 Jogador 2 venceu!';
+        vencedor = 'Jogador 2 venceu!';
     }
 
 
@@ -167,7 +168,7 @@ function verifica(mao1){
             var cartasquad = 0, cartaseparada = 0;
             var auxFH = 0, auxord = 0;
             var auxtrio = 0, auxpar = 0, auxale, controle = 0, auxS = 0;
-            var maiorPar = 0, maiorTrinca = 0, dois_Pares = 0, auxkicker;
+            var maiorPar = 0, maiorTrinca = 0, dois_Pares = 0, auxkicker, maiorFora;
             
             vetaux = converte(CardsV1);
 
@@ -241,6 +242,7 @@ function verifica(mao1){
             }
             else if(auxtrio == 0 && auxpar != 0){
                 Par = 1;
+                maiorFora = MaiorCarta(vetaux);
                 
             }
 
@@ -276,9 +278,6 @@ function verifica(mao1){
             if(Par == 1 && DoisPares == 1) Par = 0;
             //terminamos de verificar se existem dois pares
 
-            if(RoyalFlush == 0 && StraightFlush == 0 && Quadra == 0 && FullHouse == 0 && Flush == 0 && Sequencia == 0 && Trinca == 0 && DoisPares == 0 && Par == 0){
-                console.log("Maior carta = "+vetaux[4]);
-            }
         }
 
         
@@ -359,7 +358,8 @@ function verifica(mao1){
            //Par = 9
            Total[0] = 9;
            Total[1] = maiorPar;
-           console.log("maior par = "+maiorPar);
+           Total[2] = maiorFora;
+          
            return Total;
 
         }
