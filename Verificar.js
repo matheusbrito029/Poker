@@ -1,7 +1,7 @@
 
 function melhorMao(){
-    var jogador1 = new Array(), jogador2 = new Array(); //Jogador 01
-    var Cards2, mao2; //Jogador 02
+    var jogador = new Array(), jogador2 = new Array(); //Jogador 01
+    var vencedor;
     var Carta = new Array();
 
     Carta[0] = document.getElementById("mao01").value;
@@ -9,9 +9,47 @@ function melhorMao(){
     Carta[1]= document.getElementById("mao02").value;
 
     for(i = 0;i < 2;i++){
-       jogador1[i] =  verifica(Carta[i]);
-       console.log("teste = "+jogador1[i]);
+       jogador[i] =  verifica(Carta[i]);
+       console.log("teste = "+jogador[i]);
     }
+
+    for(i = 0; i < 2;i++){
+        console.log("for = "+jogador[i][1]);
+    }
+
+    if(jogador[0] < jogador[1]){
+        console.log("jogador 1 ganhou!");
+        vencedor = 'Jogador 1 venceu!';
+    }
+    else if(jogador[0] == jogador[1]){
+        if(jogador[0][1] > jogador[1][1]){
+            console.log("Jogador 1 ganhou!");
+            vencedor = 'Jogador 1 venceu!';
+        }
+        else if(jogador[0][1] == jogador[1][1]){
+            if(jogador[0][2] > jogador[1][2]){
+                console.log("Jogador 1 ganhou!");
+                vencedor = 'Jogador 1 venceu!';
+            }
+            else{
+                console.log("Jogador 2 ganhou!");
+            vencedor = 'Jogador 2 venceu!';
+            }
+              
+        }
+        else {
+            console.log("Jogador 2 ganhou!");
+        vencedor = 'Jogador 2 venceu!';
+        } 
+    }
+    else {
+        console.log("Jogador 2 ganhou!");
+        vencedor = 'Jogador 2 venceu!';
+    }
+
+
+    alert("O "+vencedor);
+
     //8E,AO,AE,AP,AC
     //10C,10E,10O,AE,AP
 }
@@ -160,7 +198,7 @@ function verifica(mao1){
                 //teremos uma quadra, então temos que manter o valor das cartas repetidas e da última carta armazenados para um possível empate.
                 for(i = 0;i < 5;i++){
                     if(vetaux[i] == vetaux[i+1] && (i+1) < 5) cartasquad = vetaux[i];
-                    else if(vetaux[i] != vetaux[i+1] && (i+1) < 5)cartaseparada = vetaux[i];
+                    else if(vetaux[i] != vetaux[i+1] && (i+1) != 5)cartaseparada = vetaux[i+1];
                 }
                 Quadra = 1;
 
@@ -280,8 +318,8 @@ function verifica(mao1){
            // cartaseparada 
            //Quadra = 3
            Total[0] = 3;
-           Total[1] = cartaseparada;
-           Total[2] = cartasquad;           
+           Total[1] = cartasquad;   
+           Total[2] = cartaseparada;  
            return Total;
         }
         else if(RoyalFlush == 0 && StraightFlush == 0 && Quadra == 0 && FullHouse == 1 && Flush == 0 && Sequencia == 0 && Trinca == 0 && DoisPares == 0 && Par == 0){
@@ -381,7 +419,7 @@ function converte(CardsV1){
         else if(CardsV1[i] == '4') vetaux[i] = 4;
         else if(CardsV1[i] == '3') vetaux[i] = 3;
         else if(CardsV1[i] == '2') vetaux[i] = 2;
-        else if(CardsV1[i] == 'A' || CardsV1[i] == 'a') vetaux[i] = 1;  
+        else if(CardsV1[i] == 'A' || CardsV1[i] == 'a') vetaux[i] = 14;  
     }
 
     return vetaux;
