@@ -31,8 +31,12 @@ function melhorMao(){
                   
                 vencedor = 'Jogador 1 venceu!';
             }
-            else{
+            else if(jogador[0][2] > jogador[1][2]){
             vencedor = 'Jogador 2 venceu!';
+            }
+            else{
+                alert("Temos um empate! ");
+                return 1;
             }
               
         }
