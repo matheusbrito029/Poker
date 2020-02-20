@@ -14,36 +14,36 @@ function melhorMao(){
     }
 
     for(i = 0; i < 2;i++){
-        console.log("for = "+jogador[i][1]);
+        console.log("for = "+jogador[i][0]);
     }
 
-    if(jogador[0] < jogador[1]){
-        console.log("jogador 1 ganhou!");
+    if(jogador[0][0] < jogador[1][0]){
+       // console.log("jogador 1 ganhou! /1");
         vencedor = 'Jogador 1 venceu!';
     }
     else if(jogador[0] == jogador[1]){
         if(jogador[0][1] > jogador[1][1]){
-            console.log("Jogador 1 ganhou!");
+           
             vencedor = 'Jogador 1 venceu!';
         }
         else if(jogador[0][1] == jogador[1][1]){
             if(jogador[0][2] > jogador[1][2]){
-                console.log("Jogador 1 ganhou!");
+              //  console.log("Jogador 1 ganhou! /3");
                 vencedor = 'Jogador 1 venceu!';
             }
             else{
-                console.log("Jogador 2 ganhou!");
+                //console.log("Jogador 2 ganhou!");
             vencedor = 'Jogador 2 venceu!';
             }
               
         }
         else {
-            console.log("Jogador 2 ganhou!");
+         //   console.log("Jogador 2 ganhou!");
         vencedor = 'Jogador 2 venceu!';
         } 
     }
     else {
-        console.log("Jogador 2 ganhou!");
+       // console.log("Jogador 2 ganhou!");
         vencedor = 'Jogador 2 venceu!';
     }
 
@@ -365,6 +365,7 @@ function verifica(mao1){
            //Par = 9
            Total[0] = 9;
            Total[1] = maiorPar;
+           console.log("maior par = "+maiorPar);
            return Total;
 
         }
