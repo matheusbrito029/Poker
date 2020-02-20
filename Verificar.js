@@ -1,6 +1,6 @@
 
 function melhorMao(){
-    var jogador = new Array(), jogador2 = new Array(); //Jogador 01
+    var jogador = new Array();
     var vencedor;
     var Carta = new Array();
 
@@ -64,11 +64,8 @@ function verifica(mao1){
 
     var RoyalFlush = StraightFlush = Quadra = FullHouse = Flush = Sequencia = Trinca = DoisPares = Par = CartaAlta = 0;
 
-
-
     Cards = separa (',', mao1);
 
-   
 
     for(i = 0 ; i < 5; i++){
         var aux;
@@ -81,9 +78,7 @@ function verifica(mao1){
             CardsV1[i] = aux[0];
             CardsN1[i] = aux[1];
         }
-        
     }
-
     for(i = 0 ; i < 5; i++){
         if(CardsN1[i] == 'O' || CardsN1[i] == 'o') O++;
         else if(CardsN1[i] == 'P' || CardsN1[i] == 'c') P++;
@@ -115,10 +110,7 @@ function verifica(mao1){
                 RoyalFlush ++;
                 continue;
             }
-        }
-        
-
-       
+        }       
     }
         
 
@@ -128,9 +120,6 @@ function verifica(mao1){
             var auxSF = 0, maiorSF, maiorF;
             
             vetaux = converte(CardsV1);
-
-            
-
             for(i = 0; i < 5; i++){
                 for(j = 0;j < 5; j++){
                     if(vetaux[i] < vetaux[j]){
@@ -156,9 +145,7 @@ function verifica(mao1){
                 Flush = 1;
                 RoyalFlush = 0;
                 maiorF = vetaux[4];
-                
             }
-
             
         }
 
@@ -198,13 +185,8 @@ function verifica(mao1){
                 Quadra = 1;
 
             }
-           
-      
-            
+                
            //verificando se temos um Full House 
-
-           // vetaux = converte(CardsV1);
-
            for(i = 0;i < 5;i++){
                 for(j = 0;j<5;j++){
                     if(vetaux[i] == vetaux[j]){
@@ -226,8 +208,6 @@ function verifica(mao1){
                 auxFH = 0;
             }
 
-         
-
             if(auxtrio != 0 && auxpar != 0){
                 FullHouse = 1;
                 Quadra = 0;
@@ -246,9 +226,7 @@ function verifica(mao1){
                 
             }
 
-            
-            //verificando se temos uma Sequência 
-            //temos que organizar o vetor primeiro
+            //verificando se temos uma Sequência, array já esta ordenad
            
             for(i = 0;i < 5;i++){
                 if(vetaux[i]+1 == vetaux[i+1]){
@@ -371,10 +349,7 @@ function verifica(mao1){
            return Total;
 
         }
-  
-    //alert("Mao01 = " +aux[1]);
-
-    
+      
 
 
 }
@@ -384,10 +359,11 @@ function separa(sep, mao) {
     var arr = new Array();
     index = -1;
  
-    while (mao.indexOf(sep) != -1) {
+    while(mao.indexOf(sep) != -1) {
         index++;
         arr[index] = mao.substring(0, mao.indexOf(sep));
         mao = mao.substring(mao.indexOf(sep) + sep.length);
+       
     }
     index++;
  
