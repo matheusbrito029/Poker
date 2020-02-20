@@ -8,50 +8,46 @@ function melhorMao(){
    
     Carta[1]= document.getElementById("mao02").value;
 
+    if(Carta[0] == false ||Carta[1] == false){
+        alert("Preencha todos os campos!");
+        return -1;
+    } 
+
     for(i = 0;i < 2;i++){
        jogador[i] =  verifica(Carta[i]);
-       console.log("teste = "+jogador[i]);
     }
-
-    for(i = 0; i < 2;i++){
-        console.log("for = "+jogador[i][0]);
-    }
-
-    if(jogador[0][0] < jogador[1][0]){
+    
+    if(jogador[0][0] <= jogador[1][0]){
        // console.log("jogador 1 ganhou! /1");
         vencedor = 'Jogador 1 venceu!';
     }
     else if(jogador[0] == jogador[1]){
-        if(jogador[0][1] > jogador[1][1]){
-           
+       
+        if(jogador[0][1] > jogador[1][1]){    
             vencedor = 'Jogador 1 venceu!';
         }
         else if(jogador[0][1] == jogador[1][1]){
-            if(jogador[0][2] > jogador[1][2]){
-              //  console.log("Jogador 1 ganhou! /3");
+            if(jogador[0][2] > jogador[1][2]){          
                 vencedor = 'Jogador 1 venceu!';
             }
             else{
-                //console.log("Jogador 2 ganhou!");
             vencedor = 'Jogador 2 venceu!';
             }
               
         }
         else {
-         //   console.log("Jogador 2 ganhou!");
+            
         vencedor = 'Jogador 2 venceu!';
         } 
     }
     else {
-       // console.log("Jogador 2 ganhou!");
-        vencedor = 'Jogador 2 venceu!';
+      
+        vencedor = '2 Jogador 2 venceu!';
     }
 
 
     alert("O "+vencedor);
 
-    //8E,AO,AE,AP,AC
-    //10C,10E,10O,AE,AP
 }
 
 function verifica(mao1){
@@ -68,8 +64,6 @@ function verifica(mao1){
     var RoyalFlush = StraightFlush = Quadra = FullHouse = Flush = Sequencia = Trinca = DoisPares = Par = CartaAlta = 0;
 
 
-
-   
 
     Cards = separa (',', mao1);
 

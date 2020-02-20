@@ -15,41 +15,42 @@
   <body>
 
 
-<div class="container">
-        <div class="row">
-          <div class="col">
-            <div class = "tit">
-                    <h3>Quem ganha?</h3>
-            </div>
-            <div>
-                <p class="text-primary">O = Ouro, P = Paus, C = Copas, E = Espadas </p>
-                <p class="text-primary"> K = Rei, Q = Dama, J = Valete, A = Ás </p>
-              <br><br><br> 
-              <p class="text-danger">
-                    Utilize a sequencia de "número" e "carta", por exemplo, KO = Reis de Ouro, 7P = 7 de Paus, com o total de 5 cartas!
-              </p> 
-            </div>
-          </div>
-          <div class="col">
-                <div class = "divmeio">
-                        <form>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Cartas do primeiro jogador</label>
-                                <input type="text" class="form-control" id="mao01" placeholder="2P,4E,5E,2O,KC">
-                              </div>
-                              <div class="form-group">
-                                <label for="formGroupExampleInput2">Cartas do segundo jogador</label>
-                                <input type="text" class="form-control" id="mao02" placeholder="2P,4E,5E,2O,KC">
-                              </div>
-                             <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#quemganha">
-                                    Quem ganha?
-                                  </button>--> 
-                                  <button type="button" onclick= "melhorMao()" class="btn btn-primary">Quem ganha?</button>
-                          </form>
-                    </div>
-          </div>
+
+    <div class="row mx-lg-n0">
+        <div class="col py-3 px-lg-5 border bg-light">
+            <h2>Gostaria de saber se aquela sua mão no jogo passado ganharia do adversário?</h2>
+            <h3>Entre ao lado com as cartas e verifique agora mesmo!</h3>
+            <br><br>
+            <h3>Siga as regras para digitar as cartas : </h3>
+            <h4><p class="text-primary">O = Ouro, P = Paus, C = Copas, E = Espadas </p>
+                <p class="text-primary"> K = Rei, Q = Dama, J = Valete, A = Ás </p></h4>
+            <h4><p class="text-danger">
+                Utilize a sequencia de "número" e "carta", por exemplo, KO = Reis de Ouro, 7P = 7 de Paus, com o total de 5 cartas!
+                Por exemplo, uma mão com : 4 de copas, 3 de ouro, 2 de espadas, 10 de copas e valete de ouro ficaria : 4C,3O,2E,10C,JO
+          </p> </h4>
+        </div>
+        
+        <div class="col py-3 px-lg-5 border bg-light"> <!--Div das entradas de dados-->
+            <div class = "divmeio">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Cartas do primeiro jogador</label>
+                    <input type="text" class="form-control" id="mao01" placeholder="2P,4E,5E,2O,KC" autofocus required maxlength="18">
+                  </div>
+                  <div class="form-group">
+                    <label for="formGroupExampleInput2">Cartas do segundo jogador</label>
+                    <input type="text" class="form-control" id="mao02" placeholder="2P,4E,5E,2O,KC" required maxlength="18">
+                  </div>
+                 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#quemganha">
+                        Quem ganha?
+                      </button>--> 
+                      <button type="button" onclick= "melhorMao()" class="btn btn-primary">Quem ganha?</button>
+              </form>
+              </div>
         </div>
       </div>
+        
+     
 
       
 
